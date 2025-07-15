@@ -60,11 +60,8 @@ def main():
         coffe_address = coffe_file.read()
 
     coffe_address = json.loads(coffe_address)
-
     coffe_list, user_location = coffe_generator(coffe_address)
-
     sorted_shops = sorted(coffe_list, key=get_distance)
-
     nearest = sorted_shops[:5]
 
     map = folium.Map(location=(user_location[0], user_location[1]))
